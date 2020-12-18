@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\CoolerMaster\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\CoolerMaster\\.nuget\\packages"
+    ]
+  }
+}

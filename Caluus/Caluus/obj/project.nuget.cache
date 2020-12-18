@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7h4Be7gXFDBcstkGBzTY8/rdpo2bgrCSSXTMQGAserhqfWLv5THqg8+atB2jOzLtYHDtUFztqKQrIrH9n0o6EA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CoolerMaster\\Documents\\TheCallusGameEngine\\Callus\\Caluus\\Caluus\\Caluus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CoolerMaster\\.nuget\\packages\\sixlabors.imagesharp\\1.0.2\\sixlabors.imagesharp.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
