@@ -48,6 +48,31 @@ namespace Project1
             GL.BindTexture(TextureTarget.Texture2D, 0);
             GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
 
+            WriteFBOstatus();
+
+            Width = width;
+            Height = height;
+        }
+        public void RenderShadowMap(Vector3 lightpos, Shader _Shader, List<Model> ObjectsRendering, int WindowWidth, int WindowHeight)
+        {
+            GL.Viewport(0, 0, Width, Height);
+            GL.BindFramebuffer(FramebufferTarget.Framebuffer, ID);
+            GL.Clear(ClearBufferMask.DepthBufferBit);
+            
+
+            foreach (Model OBJ in ObjectsRendering)
+            {
+                OBJ.RenderToShadowMap(_Shader);
+            }
+            GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
+
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            GL.Viewport(0, 0, WindowWidth, WindowHeight);
+        }
+
+        private void WriteFBOstatus()
+        {
+            
             switch (GL.Ext.CheckFramebufferStatus(FramebufferTarget.FramebufferExt))
             {
                 case FramebufferErrorCode.FramebufferCompleteExt:
@@ -65,11 +90,6 @@ namespace Project1
                         Console.WriteLine("FBO: There are no attachments.");
                         break;
                     }
-                /* case  FramebufferErrorCode.GL_FRAMEBUFFER_INCOMPLETE_DUPLICATE_ATTACHMENT_EXT: 
-                     {
-                         Console.WriteLine("FBO: An object has been attached to more than one attachment point.");
-                         break;
-                     }*/
                 case FramebufferErrorCode.FramebufferIncompleteDimensionsExt:
                     {
                         Console.WriteLine("FBO: Attachments are of different size. All attachments must have the same width and height.");
@@ -101,25 +121,6 @@ namespace Project1
                         break;
                     }
             }
-
-            Width = width;
-            Height = height;
-        }
-        public void RenderShadowMap(Vector3 lightpos, Shader _Shader, List<Model> ObjectsRendering, int WindowWidth, int WindowHeight)
-        {
-            GL.Viewport(0, 0, Width, Height);
-            GL.BindFramebuffer(FramebufferTarget.Framebuffer, ID);
-            GL.Clear(ClearBufferMask.DepthBufferBit);
-            
-
-            foreach (Model OBJ in ObjectsRendering)
-            {
-                OBJ.RenderToShadowMap(_Shader);
-            }
-            GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
-
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.Viewport(0, 0, WindowWidth, WindowHeight);
         }
 
 

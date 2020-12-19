@@ -1,5 +1,4 @@
 using System;
-using System.Reflection.Emit;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
@@ -22,6 +21,9 @@ namespace Project1
 
         private controlmethod _Control = new controlmethod();
 
+        readonly string shaderfolderpath = @"C:\Users\CoolerMaster\Documents\TheCallusGameEngine\Callus\Caluus\Caluus\Shaders\";
+
+        readonly string modelfolderpath = @"C:\Users\CoolerMaster\Documents\TheCallusGameEngine\Callus\Caluus\Caluus\Models\";
         /*/
         private Model Overpass;
         private Model ConcretePlate;
@@ -52,13 +54,13 @@ namespace Project1
 
             
             
-            _lightingShader = new Shader(@"C:\Users\CoolerMaster\source\repos\Project1\Project1\Shader\Texture.vert", @"C:\Users\CoolerMaster\source\repos\Project1\Project1\Shader\Texture.frag");
-            _ShadowmappingShader = new Shader(@"C:\Users\CoolerMaster\source\repos\Project1\Project1\Shader\DepthFBO.vert", @"C:\Users\CoolerMaster\source\repos\Project1\Project1\Shader\DepthFBO.frag");
-            _DebugMap = new Shader(@"C:\Users\CoolerMaster\source\repos\Project1\Project1\Shader\DebugQuad.Vert", @"C:\Users\CoolerMaster\source\repos\Project1\Project1\Shader\DebugQuad.Frag");
+            _lightingShader = new Shader(shaderfolderpath + "texture.vert", shaderfolderpath + "texture.frag");
+            _ShadowmappingShader = new Shader(shaderfolderpath + "depthFBO.vert", shaderfolderpath + "depthFBO.frag");
+            _DebugMap = new Shader(shaderfolderpath + "debug.vert", shaderfolderpath + "debug.frag");
 
 
-            Plane = new Model(@"C:\Users\CoolerMaster\source\repos\Project1\Project1\Models\FlatPlane", _lightingShader);
-            Cube = new Model(@"C:\Users\CoolerMaster\source\repos\Project1\Project1\Models\SimpleCube", _lightingShader);
+            Plane = new Model(modelfolderpath + "FlatPlane", _lightingShader);
+            Cube = new Model(modelfolderpath + "SimpleCube", _lightingShader);
 
             DSFBO = new DirectionShadowFBO(1024, 1024);
 
@@ -71,7 +73,7 @@ namespace Project1
 
             _camera = new Camera(Vector3.UnitZ * 3, 1.6f, 45.0f);
 
-            Plane.AddInstance(new Vector3(0.0f, 0.0f, 0.0f));
+            Plane.AddInstance(new Vector3(0.0f, -0.2f, 0.0f));
 
             Cube.AddInstance(new Vector3(0.0f, 1.5f, 0.0f), new Vector3(0.5f));
             Cube.AddInstance(new Vector3(2.0f, 0.0f, 1.0f), new Vector3(0.5f));
@@ -122,7 +124,7 @@ namespace Project1
             _DebugMap.SetInt("depthMap", 0);
             _DebugMap.SetFloat("near_plane", 0.1f);
             _DebugMap.SetFloat("far_plane", 1.0f);
-            renderQuad();
+            //renderQuad();
 
             
 
@@ -170,8 +172,6 @@ namespace Project1
             {
                 render.RenderObject(_lightingShader);
             }
-            
-
             /*/
             ConcretePlate.RenderObject(_lightingShader);
             Overpass.RenderObject(_lightingShader);

@@ -28,9 +28,9 @@ namespace Project1
         public Model(string filepath, Shader _Shader)
         {
             FolderPath = filepath;
-            _diffuseMap = new Texture(FolderPath + @"\Texture\Diff.png");
-            _specularMap = new Texture(FolderPath + @"\Texture\Spec.png");
-            _normalMap = new Texture(FolderPath + @"\Texture\Norm.png");
+            _diffuseMap = new Texture(FolderPath + @"\Textures\Diff.png");
+            _normalMap = new Texture(FolderPath + @"\Textures\Norm.png");
+            _specularMap = new Texture(FolderPath + @"\Textures\Spec.png");
 
             int i = 0;
             foreach (string line in System.IO.File.ReadLines(FolderPath + @"\Material.mat"))
