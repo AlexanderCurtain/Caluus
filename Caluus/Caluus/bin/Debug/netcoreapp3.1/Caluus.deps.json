@@ -8,29 +8,32 @@
     ".NETCoreApp,Version=v3.1": {
       "Caluus/1.0.0": {
         "dependencies": {
-          "OpenTK.GLControl": "3.1.0",
-          "SixLabors.ImageSharp": "1.0.2"
+          "Microsoft.Win32.SystemEvents": "5.0.0",
+          "SixLabors.ImageSharp": "1.0.2",
+          "System.Drawing.Common": "5.0.0",
+          "Unofficial.OpenTK": "3.0.19"
         },
         "runtime": {
           "Caluus.dll": {}
         }
       },
-      "OpenTK/3.1.0": {
-        "runtime": {
-          "lib/net20/OpenTK.dll": {
-            "assemblyVersion": "3.1.0.0",
-            "fileVersion": "3.1.0.0"
-          }
-        }
-      },
-      "OpenTK.GLControl/3.1.0": {
+      "Microsoft.NETCore.Platforms/5.0.0": {},
+      "Microsoft.Win32.SystemEvents/5.0.0": {
         "dependencies": {
-          "OpenTK": "3.1.0"
+          "Microsoft.NETCore.Platforms": "5.0.0"
         },
         "runtime": {
-          "lib/net20/OpenTK.GLControl.dll": {
-            "assemblyVersion": "3.1.0.0",
-            "fileVersion": "3.1.0.0"
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
@@ -39,6 +42,39 @@
           "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.2.0"
+          }
+        }
+      },
+      "System.Drawing.Common/5.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          },
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Unofficial.OpenTK/3.0.19": {
+        "runtime": {
+          "lib/netstandard2.0/OpenTK.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       }
@@ -50,19 +86,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "OpenTK/3.1.0": {
+    "Microsoft.NETCore.Platforms/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xoP5kb81lRSY5RzbntaFA9yXK+aGF5SLShhns55MyZtxtNafIxRH5KvRTFss/N653brTzE+AfepjKsbMexYlBQ==",
-      "path": "opentk/3.1.0",
-      "hashPath": "opentk.3.1.0.nupkg.sha512"
+      "sha512": "sha512-VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
+      "path": "microsoft.netcore.platforms/5.0.0",
+      "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
     },
-    "OpenTK.GLControl/3.1.0": {
+    "Microsoft.Win32.SystemEvents/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BjDzF+MhJd2LaZYzkXmgkzzXgHAko/Iur4rGy6+DPdZA1Jcc0X6jXZ6QsUsjlLRNzgevO7uAj2h1TqX7sguaYg==",
-      "path": "opentk.glcontrol/3.1.0",
-      "hashPath": "opentk.glcontrol.3.1.0.nupkg.sha512"
+      "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
+      "path": "microsoft.win32.systemevents/5.0.0",
+      "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
     },
     "SixLabors.ImageSharp/1.0.2": {
       "type": "package",
@@ -70,6 +106,20 @@
       "sha512": "sha512-iZJ37Iss3pUkFl961x1aka85QuvgY9oNZabHijzVnHs4QTz6EMNx3zjJDyvK/0+Ryj6JPv/PC7GVIJXLHtu2nQ==",
       "path": "sixlabors.imagesharp/1.0.2",
       "hashPath": "sixlabors.imagesharp.1.0.2.nupkg.sha512"
+    },
+    "System.Drawing.Common/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SztFwAnpfKC8+sEKXAFxCBWhKQaEd97EiOL7oZJZP56zbqnLpmxACWA8aGseaUExciuEAUuR9dY8f7HkTRAdnw==",
+      "path": "system.drawing.common/5.0.0",
+      "hashPath": "system.drawing.common.5.0.0.nupkg.sha512"
+    },
+    "Unofficial.OpenTK/3.0.19": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+upcs43OHsnvS0MUpB7VvA+HqLcq1QT1zHfdYUmQb+gv6gYNgKS6FloP6N36/UTMvmzw+Jf+eZaNrnSiLY/70A==",
+      "path": "unofficial.opentk/3.0.19",
+      "hashPath": "unofficial.opentk.3.0.19.nupkg.sha512"
     }
   }
 }

@@ -10,7 +10,7 @@ using SixLabors.ImageSharp.Formats;
 using SixLabors.ImageSharp.Metadata;
 using SixLabors.ImageSharp.ColorSpaces;
 using OpenTK.Graphics.OpenGL;
-
+using Image = SixLabors.ImageSharp.Image;
 
 namespace Project1
 {
